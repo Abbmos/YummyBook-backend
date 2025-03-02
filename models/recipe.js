@@ -55,9 +55,9 @@ const recipeSchema = new mongoose.Schema({
  },
   author: { 
     type: mongoose.Schema.Types.ObjectId, ref: 'User',
-    comments: [commentSchema]
+    
 },
-  
+comments: [commentSchema],
 });
 const Recipe = mongoose.model('Recipe', recipeSchema);
 

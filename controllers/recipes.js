@@ -81,7 +81,9 @@ router.delete('/:recipeId', async (req, res) => {
 // Add a comment to a recipe
 router.post('/:recipeId/comments', async (req, res) => {
   try {
+    
     req.body.author = req.user._id;
+    
     const recipe = await Recipe.findById(req.params.recipeId);
     recipe.comments.push(req.body);
     await recipe.save();
