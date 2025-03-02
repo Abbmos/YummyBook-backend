@@ -13,7 +13,7 @@ const commentSchema = new mongoose.Schema(
         type:Number,
         min:0, 
         max:5
-    },
+    },  
 
     date: { 
         type: Date, 
@@ -26,7 +26,7 @@ const commentSchema = new mongoose.Schema(
 
 
 const recipeSchema = new mongoose.Schema({
-  titel: {
+  title: {
      type: String,
     required: true
  },
