@@ -22,7 +22,10 @@ router.get('/', async (req, res) => {
 
   router.get('/:recipeId', async (req, res) => {
     try {
-      const recipe = await Recipe.findById(req.params.recipeId).populate(['author']);
+      const recipe = await Recipe.findById(req.params.recipeId).populate("author").populate( {
+        path: 'comments',
+        populate: { path: 'author', select: 'username' }
+      })
   
       res.status(200).json(recipe);
     } catch (error) {
