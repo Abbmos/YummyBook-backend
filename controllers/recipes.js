@@ -26,7 +26,6 @@ router.get('/', async (req, res) => {
         path: 'comments',
         populate: { path: 'author', select: 'username' }
       })
-  
       res.status(200).json(recipe);
     } catch (error) {
       res.status(500).json(error);
